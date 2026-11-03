@@ -1,10 +1,16 @@
+import java.util.Iterator;
+
 public class Main {
-    public static void main(String args[]) {
-        PancakeHouseMenu pancakeHouseMenu = new PancakeHouseMenu();
-        DinerMenu dinerMenu = new DinerMenu();
+    public static void main(String[] args) {
+        DataHolder holder = new DataHolder();
 
-        Waitress waitress = new Waitress(pancakeHouseMenu, dinerMenu);
+        for (Object item : holder) {
+            System.out.println(item);
+        }
 
-        waitress.printMenu();
+        Iterator<Object> it = holder.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
     }
 }
